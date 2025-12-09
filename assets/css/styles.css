@@ -1,78 +1,123 @@
+/* ------------------ RESET ------------------ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 body {
-    background: #f6f6f6;
+    background: #fafafa;
     color: #333;
 }
 
-/* HEADER */
+/* ------------------ HEADER ------------------ */
 .header {
-    background: black;
+    width: 100%;
+    background: #111;
     color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.header ul {
+    padding: 20px 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+/* Menu */
+.menu ul {
     list-style: none;
-    margin-top: 10px;
+    display: flex;
+    gap: 25px;
 }
 
-.header ul li {
-    margin: 0 15px;
-}
-
-.header a {
-    text-decoration: none;
+.menu ul li a {
     color: white;
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+    transition: .3s;
 }
 
-/* HERO — FONDO PERSONALIZABLE */
+.menu ul li a:hover {
+    color: #ff5bbd;
+}
+
+/* Espacio superior por header fijo */
+body {
+    padding-top: 100px;
+}
+
+/* ------------------ HERO ------------------ */
 .hero {
-    
     background: url('../img/portada2.jpg') no-repeat center center/cover;
     text-align: center;
-    padding: 200px 20px;
+    padding: 200px 30px;
     color: white;
+    background-attachment: fixed;
 }
 
-.hero button {
-    padding: 12px 25px;
-    background: white;
-    color: black;
-    border: none;
-    cursor: pointer;
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+#btnHero {
     margin-top: 20px;
-    font-size: 17px;
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    background: #ff5bbd;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-/* TARJETAS */
+#btnHero:hover {
+    background: #ff2f9b;
+}
+
+/* ------------------ TENDENCIAS ------------------ */
 .tendencias {
-    padding: 50px;
     text-align: center;
+    padding: 60px 20px;
+}
+
+.tendencias h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
 }
 
 .cards {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card {
+    width: 280px;
     background: white;
-    width: 250px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
 }
 
 .card img {
@@ -80,20 +125,44 @@ body {
     border-radius: 10px;
 }
 
-/* GALERÍA */
-.galeria .grid {
-    margin-top: 30px;
+.card h3 {
+    margin-top: 12px;
+    font-size: 22px;
+}
+
+/* ------------------ GALERÍA ------------------ */
+.galeria {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 35px;
+}
+
+.grid {
+    margin-top: 25px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 15px;
 }
 
-.galeria img {
+.grid img {
     width: 100%;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* CONTACTO */
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ------------------ CONTACTO ------------------ */
+.contacto {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 .contacto form {
     width: 350px;
     margin: auto;
@@ -101,18 +170,67 @@ body {
     flex-direction: column;
 }
 
-.contacto input, .contacto textarea {
-    margin: 10px 0;
+.contacto input,
+.contacto textarea {
     padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #aaa;
     border-radius: 5px;
-    border: 1px solid gray;
+    font-size: 16px;
 }
 
 .contacto button {
-    background: black;
-    color: white;
+    margin-top: 12px;
     padding: 12px;
+    background: #111;
+    color: white;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.contacto button:hover {
+    background: #333;
+}
+
+/* ------------------ FOOTER ------------------ */
+.footer {
+    margin-top: 70px;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 16px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    #btnHero {
+        font-size: 16px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }

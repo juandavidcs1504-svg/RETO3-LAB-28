@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f6f6f6;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.header ul li {
+    margin: 0 15px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* HERO — FONDO PERSONALIZABLE */
+.hero {
+    
+    background: url('../img/portada2.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 200px 20px;
+    color: white;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+/* TARJETAS */
+.tendencias {
+    padding: 50px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* GALERÍA */
+.galeria .grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* CONTACTO */
+.contacto form {
+    width: 350px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto input, .contacto textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.contacto button {
+    background: black;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
